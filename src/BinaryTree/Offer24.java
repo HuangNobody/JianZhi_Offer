@@ -1,3 +1,4 @@
+package BinaryTree;
 public class Offer24 {
 
 	public boolean VerifySequenceOfBST(int [] sequence, int start, int end){
