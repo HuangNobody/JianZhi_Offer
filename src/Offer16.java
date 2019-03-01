@@ -1,3 +1,4 @@
+
 public class Offer16 {
 
 	public static class ListNode{

@@ -1,3 +1,4 @@
+
 public class Offer14_2 {
 	
 	public void reOrder(int [] array){

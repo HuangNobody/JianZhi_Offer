@@ -1,4 +1,5 @@
 
+
 public class Offer18 {
 	
 	public static class BinaryTreeNode{

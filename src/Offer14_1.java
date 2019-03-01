@@ -1,3 +1,4 @@
+
 public class Offer14_1 {
 	
 	public void reOrderOddEven(int [] number){
