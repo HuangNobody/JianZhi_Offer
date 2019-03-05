@@ -25,7 +25,7 @@ public class Offer33 {
 		
 		for(int i = 0;i< length;i++)
 			stringbuilder.append(str[i]);
-		
+		 
 		return stringbuilder.toString();
 	}
 	
