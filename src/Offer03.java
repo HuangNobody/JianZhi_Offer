@@ -20,12 +20,41 @@ public class Offer03 {
 		return false;
 	}
 	
+		//æ–¹æ³•2
+	public String replaceSpace_2(StringBuffer str) {
+		if(str == null )
+			return null;
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0;i<str.length();i++){
+			if(str.charAt(i) == ' '){
+				sb.append("%20");
+			}else{
+				sb.append(str.charAt(i));
+			}
+		}
+		return sb.toString();
+	}
+
+	//æ–¹æ³•3
+	public String replaceSpace_3(StringBuffer str) {
+		if(str == null )
+			return null;
+
+		for(int i = 0;i<str.length();i++){
+			if(str.charAt(i) == ' '){
+				//str.charAt(i) = '%20';
+				str.replace(i,i+1,"%20");
+				//start -- å¼€å§‹çš„ç´¢å¼•ï¼ˆåŒ…æ‹¬ï¼‰ã€‚end -- ç»“æŸç´¢å¼•ï¼ˆä¸åŒ…æ‹¬ï¼‰ã€‚str -- å­—ç¬¦ä¸²ï¼Œå°†å–ä»£ä»¥å‰çš„å†…å®¹
+			}
+		}
+		return str.toString();
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [][]arrays = {{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
 		Offer03 of03 = new Offer03();
-		//²âÊÔÓÃÀý
-		//1£¬¶þÎ¬Êý×éÖÐ°üº¬²éÕÒµÄÊý×Ö£¨²éÕÒµÄÊý×éÊÇÊý×éÖÐµÄ×î´óÖµºÍ×îÐ¡Öµ£¬²éÕÒµÄÊý×Ö½éÓÚÊý×éÖÐµÄ×î´óÖµºÍ×îÐ¡ÖµÖ®¼ä£©
+		//æµ‹è¯•ç”¨ä¾‹
+		//1ï¼ŒäºŒç»´æ•°ç»„ä¸­åŒ…å«æŸ¥æ‰¾çš„æ•°å­—ï¼ˆæŸ¥æ‰¾çš„æ•°ç»„æ˜¯æ•°ç»„ä¸­çš„æœ€å¤§å€¼å’Œæœ€å°å€¼ï¼ŒæŸ¥æ‰¾çš„æ•°å­—ä»‹äºŽæ•°ç»„ä¸­çš„æœ€å¤§å€¼å’Œæœ€å°å€¼ä¹‹é—´ï¼‰
 		int target1 = 15;
 		int target2 = 1;
 		int target3 = 7;
@@ -33,8 +62,8 @@ public class Offer03 {
 		System.out.println(of03.Find(arrays, target2));
 		System.out.println(of03.Find(arrays, target3));
 		
-		//2£¬¶þÎ¬Êý×éÖÐÃ»ÓÐ²éÕÒµÄÊý×Ö£¨²éÕÒµÄÊý×Ö´óÓÚÊý×éÖÐµÄ×î´óÖµ£¬²éÕÒµÄÊý×ÖÐ¡ÓÚÊý×éÖÐµÄ×îÐ¡Öµ£¬
-		//²éÕÒµÄÊý×ÖÔÚÊý×éµÄ×î´óÖµºÍ×îÐ¡ÖµÖ®¼äµ«ÊÇÊý×éÖÐÃ»ÓÐÕâ¸öÊý×Ö£©
+		//2ï¼ŒäºŒç»´æ•°ç»„ä¸­æ²¡æœ‰æŸ¥æ‰¾çš„æ•°å­—ï¼ˆæŸ¥æ‰¾çš„æ•°å­—å¤§äºŽæ•°ç»„ä¸­çš„æœ€å¤§å€¼ï¼ŒæŸ¥æ‰¾çš„æ•°å­—å°äºŽæ•°ç»„ä¸­çš„æœ€å°å€¼ï¼Œ
+		//æŸ¥æ‰¾çš„æ•°å­—åœ¨æ•°ç»„çš„æœ€å¤§å€¼å’Œæœ€å°å€¼ä¹‹é—´ä½†æ˜¯æ•°ç»„ä¸­æ²¡æœ‰è¿™ä¸ªæ•°å­—ï¼‰
 		int target4 = 16;
 		int target5 = 0;
 		int target6 = 3;
@@ -42,7 +71,7 @@ public class Offer03 {
 		System.out.println(of03.Find(arrays, target5));
 		System.out.println(of03.Find(arrays, target6));
 		
-		//3£¬ÌØÊâÊäÈë²âÊÔ£¨ÊäÈë¿ÕÖ¸Õë£©
+		//3ï¼Œç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆè¾“å…¥ç©ºæŒ‡é’ˆï¼‰
 		int target7 = 7;
 		int [][] arrays_2 = null;
 		System.out.println(of03.Find(arrays_2, target7));
