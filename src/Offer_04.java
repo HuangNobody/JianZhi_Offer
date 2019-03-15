@@ -14,22 +14,7 @@ public class Offer_04 {
 			}
 		}
 		return String.valueOf(sb);
-	}
-	//方法2,在牛客上通过了
-	public String replaceSpace(StringBuffer str) {
-        	if(str == null || str.length() == 0)
-          		return null;
-        	for(int i = 0;i<str.length();i++){
-           		if(str.charAt(i) == ' '){
-                		//str.charAt(i) = '%20';
-                		str.replace(i,i+1,"%20");
-                		//start -- 开始的索引（包括）。end -- 结束索引（不包括）。str -- 字符串，将取代以前的内容
-            		}
-        	}
-        return str.toString();
-    	}
-	
-	
+	}	
 	
 	public static void main(String[] args) {
 		Offer_04 of4 = new Offer_04();
