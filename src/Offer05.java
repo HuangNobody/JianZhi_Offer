@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Stack;
 
-//¶¨ÒåÁ´±í½á¹¹,ÕâÀïÈë¹ÉÕâ²¿·Ö´úÂë·Åµ½ÀàOffer05ÀïÃæ¾Í»á±¨´í£»Èç¹û·Ç°ÑListNode·Åµ½ÀàOffer05ÀïÃæ¾ÍÒªÔÚclass ListNode{...}Ç°Ãæ¼ÓÉÏstatic
+//å®šä¹‰é“¾è¡¨ç»“æ„,è¿™é‡Œå…¥è‚¡è¿™éƒ¨åˆ†ä»£ç æ”¾åˆ°ç±»Offer05é‡Œé¢å°±ä¼šæŠ¥é”™ï¼›å¦‚æœéæŠŠListNodeæ”¾åˆ°ç±»Offer05é‡Œé¢å°±è¦åœ¨class ListNode{...}å‰é¢åŠ ä¸Šstatic
 class ListNode{
 	ListNode next;
 	int val;
@@ -25,10 +25,38 @@ public class Offer05 {
 		}
 		return list;
 	}
+	
+		//æ–¹æ³•2
+	public ArrayList<Integer> printListFromTailToHead_2(ListNode listNode){
+		ArrayList<Integer> list = new ArrayList<>();
+		if(listNode == null)
+			return list;
+		Stack<Integer> stack = new Stack<>();
+		while(listNode != null){
+			stack.push(listNode.val);
+			listNode = listNode.next;
+		}
+
+		while(!stack.isEmpty()){
+			list.add(stack.pop());
+		}
+		return list;
+	}
+
+	//æ–¹æ³•3ï¼Œé€’å½’
+	private ArrayList<Integer> list = new ArrayList<>();
+	public ArrayList<Integer> printListFromTailToHead_3(ListNode listNode){
+		if(listNode == null)
+			return list;
+		printListFromTailToHead_3(listNode.next);
+		list.add(listNode.val);
+		return list;
+	}
+	
 	public static void main(String[] args) {
 		Offer05 of5 = new Offer05();
-		//²âÊÔÓÃÀı
-		//1£¬¹¦ÄÜ²âÊÔ£¨ÊäÈëµÄÁ´±íÓĞ¶à¸ö½Úµã£¬ÊäÈëµÄÁ´±íÖ»ÓĞÒ»¸ö½Úµã£©
+		//æµ‹è¯•ç”¨ä¾‹
+		//1ï¼ŒåŠŸèƒ½æµ‹è¯•ï¼ˆè¾“å…¥çš„é“¾è¡¨æœ‰å¤šä¸ªèŠ‚ç‚¹ï¼Œè¾“å…¥çš„é“¾è¡¨åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹ï¼‰
 		ListNode node1 = new ListNode();
 		ListNode node2 = new ListNode();
 		ListNode node3 = new ListNode();
@@ -43,7 +71,7 @@ public class Offer05 {
 		node4.val = 4;
 		System.out.println(of5.printListFromTailToHead(node4));
 		
-		//2,ÌØÊâÊäÈë²âÊÔ£¨ÊäÈëµÄÁ´±íÍ·½ÚµãÖ¸ÕëÎªnull£©
+		//2,ç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆè¾“å…¥çš„é“¾è¡¨å¤´èŠ‚ç‚¹æŒ‡é’ˆä¸ºnullï¼‰
 		ListNode node5 = null;
 		System.out.println(of5.printListFromTailToHead(node5));
 	}
