@@ -1,12 +1,13 @@
 
 public class Offer_04 {
+	//æ–¹æ³•1
 	public String replaceSpace(String str){
-		if(str == null||str.length()<=0)//str == nullÅÐ¶Ï×Ö·û´®ÊÇ¸önullÖ¸Õë£¬str.length()<=0ÅÐ¶Ï×Ö·û´®ÊÇ¿Õ×Ö·û´®
+		if(str == null||str.length()<=0)//str == nullåˆ¤æ–­å­—ç¬¦ä¸²æ˜¯ä¸ªnullæŒ‡é’ˆï¼Œstr.length()<=0åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯ç©ºå­—ç¬¦ä¸²
 			return null;
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i = 0;i<str.length();i++){
-			if(String.valueOf(str.charAt(i)).equals(" ")){//String.valueOf£¨£©£ºReturns the string representation of the char argument.
+			if(String.valueOf(str.charAt(i)).equals(" ")){//String.valueOfï¼ˆï¼‰ï¼šReturns the string representation of the char argument.
 				sb.append("%20");
 			}else{
 				sb.append(str.charAt(i));
@@ -14,11 +15,27 @@ public class Offer_04 {
 		}
 		return String.valueOf(sb);
 	}
+	//æ–¹æ³•2,åœ¨ç‰›å®¢ä¸Šé€šè¿‡äº†
+	public String replaceSpace(StringBuffer str) {
+        	if(str == null || str.length() == 0)
+          		return null;
+        	for(int i = 0;i<str.length();i++){
+           		if(str.charAt(i) == ' '){
+                		//str.charAt(i) = '%20';
+                		str.replace(i,i+1,"%20");
+                		//startÂ -- å¼€å§‹çš„ç´¢å¼•ï¼ˆåŒ…æ‹¬ï¼‰ã€‚endÂ -- ç»“æŸç´¢å¼•ï¼ˆä¸åŒ…æ‹¬ï¼‰ã€‚strÂ -- å­—ç¬¦ä¸²ï¼Œå°†å–ä»£ä»¥å‰çš„å†…å®¹
+            		}
+        	}
+        return str.toString();
+    	}
+	
+	
+	
 	public static void main(String[] args) {
 		Offer_04 of4 = new Offer_04();
 
-		//²âÊÔÓÃÀý
-		//1£¬ÊäÈëµÄ×Ö·û´®ÖÐ°üº¬¿Õ¸ñ£¨¿Õ¸ñÎ»ÓÚ×Ö·û´®µÄ×îÇ°Ãæ£¬¿Õ¸ñÎ»ÓÚ×Ö·û´®µÄ×îºóÃæ£¬¿Õ¸ñÎ»ÓÚ×Ö·û´®µÄÖÐ¼ä£¬×Ö·û´®ÖÐÓÐÁ¬Ðø¶à¸ö¿Õ¸ñ£©¡£
+		//æµ‹è¯•ç”¨ä¾‹
+		//1ï¼Œè¾“å…¥çš„å­—ç¬¦ä¸²ä¸­åŒ…å«ç©ºæ ¼ï¼ˆç©ºæ ¼ä½äºŽå­—ç¬¦ä¸²çš„æœ€å‰é¢ï¼Œç©ºæ ¼ä½äºŽå­—ç¬¦ä¸²çš„æœ€åŽé¢ï¼Œç©ºæ ¼ä½äºŽå­—ç¬¦ä¸²çš„ä¸­é—´ï¼Œå­—ç¬¦ä¸²ä¸­æœ‰è¿žç»­å¤šä¸ªç©ºæ ¼ï¼‰ã€‚
 		String str1 = " We are happy.";
 		System.out.println(of4.replaceSpace(str1));
 		String str2 = "We are happy. ";
@@ -26,25 +43,25 @@ public class Offer_04 {
 		String str3 = "We  are happy.";
 		System.out.println(of4.replaceSpace(str3));
 		
-		//2£¬ÊäÈëµÄ×Ö·û´®ÖÐÃ»ÓÐ¿Õ¸ñ
+		//2ï¼Œè¾“å…¥çš„å­—ç¬¦ä¸²ä¸­æ²¡æœ‰ç©ºæ ¼
 		String str4 = "Wearehappy.";
 		System.out.println(of4.replaceSpace(str4));
 		
-		//ÌØÊâÊäÈë²âÊÔ£¨×Ö·û´®ÊÇ¸önullÖ¸Õë ¡¢×Ö·û´®ÊÇ¸ö¿Õ×Ö·û´®¡¢×Ö·û´®Ö»ÓÐÒ»¸ö¿Õ¸ñ×Ö·û¡¢×Ö·û´®Ö»ÓÐÁ¬Ðø¶à¸ö¿Õ¸ñ£©¡£
+		//ç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆå­—ç¬¦ä¸²æ˜¯ä¸ªnullæŒ‡é’ˆ ã€å­—ç¬¦ä¸²æ˜¯ä¸ªç©ºå­—ç¬¦ä¸²ã€å­—ç¬¦ä¸²åªæœ‰ä¸€ä¸ªç©ºæ ¼å­—ç¬¦ã€å­—ç¬¦ä¸²åªæœ‰è¿žç»­å¤šä¸ªç©ºæ ¼ï¼‰ã€‚
 		String str5 = null;
 		System.out.println(of4.replaceSpace(str5));
 		
-		String str6 = "";//""±íÊ¾¿Õ×Ö·û´®
+		String str6 = "";//""è¡¨ç¤ºç©ºå­—ç¬¦ä¸²
 		System.out.println(of4.replaceSpace(str6));
-		String str7 = " ";//" "±íÊ¾Ò»¸ö¿Õ¸ñ×Ö·û
+		String str7 = " ";//" "è¡¨ç¤ºä¸€ä¸ªç©ºæ ¼å­—ç¬¦
 		System.out.println(of4.replaceSpace(str7));
-		String str8 = "   ";//" "±íÊ¾3¸ö¿Õ¸ñ×Ö·û
+		String str8 = "   ";//" "è¡¨ç¤º3ä¸ªç©ºæ ¼å­—ç¬¦
 		System.out.println(of4.replaceSpace(str8));
 		
 	}
 }
 /**
  * StringBuilder a = new StringBuilder("we are happy.");
- * String b = " " + a;//½«StringBuilderÀàÐÍ×ª»»³ÉStringÀàÐÍ
- * StringBuilder a = new StringBuilder(a);//½«StringÀàÐÍ×ª»»ÎªStringBuilderÀàÐÍ
+ * String b = " " + a;//å°†StringBuilderç±»åž‹è½¬æ¢æˆStringç±»åž‹
+ * StringBuilder a = new StringBuilder(a);//å°†Stringç±»åž‹è½¬æ¢ä¸ºStringBuilderç±»åž‹
  * */
