@@ -37,19 +37,20 @@ public class Offer03 {
 
 	//方法3
 	public String replaceSpace_3(StringBuffer str) {
-		if(str == null )
+		if (str == null)
 			return null;
 
-		for(int i = 0;i<str.length();i++){
-			if(str.charAt(i) == ' '){
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == ' ') {
 				//str.charAt(i) = '%20';
-				str.replace(i,i+1,"%20");
+				str.replace(i, i + 1, "%20");
 				//start -- 开始的索引（包括）。end -- 结束索引（不包括）。str -- 字符串，将取代以前的内容
 			}
 		}
 		return str.toString();
+	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		// TODO Auto-generated method stub
 		int [][]arrays = {{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
 		Offer03 of03 = new Offer03();
@@ -61,7 +62,7 @@ public class Offer03 {
 		System.out.println(of03.Find(arrays, target1));
 		System.out.println(of03.Find(arrays, target2));
 		System.out.println(of03.Find(arrays, target3));
-		
+
 		//2，二维数组中没有查找的数字（查找的数字大于数组中的最大值，查找的数字小于数组中的最小值，
 		//查找的数字在数组的最大值和最小值之间但是数组中没有这个数字）
 		int target4 = 16;
@@ -70,7 +71,7 @@ public class Offer03 {
 		System.out.println(of03.Find(arrays, target4));
 		System.out.println(of03.Find(arrays, target5));
 		System.out.println(of03.Find(arrays, target6));
-		
+
 		//3，特殊输入测试（输入空指针）
 		int target7 = 7;
 		int [][] arrays_2 = null;
