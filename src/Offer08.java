@@ -15,7 +15,8 @@
  * 相邻的元素，而第二个指针指向的更好是最小的元素。这就是循环结束的条件。
  */
 public class Offer08 {
-	
+
+	//方法1
 	public int minOfRotateArrays(int [] arrays) {
 		if(arrays == null || arrays.length <= 0)
 			//throw new RuntimeException("Invalid arrays");
@@ -42,6 +43,27 @@ public class Offer08 {
 				index2 = indexMid;
 		}
 		return arrays[indexMid];
+	}
+
+	//method 2, 牛客网上验证过，感觉这种更好
+	public int minNumberInRotateArray(int [] array) {
+		if(array == null || array.length==0)
+			return 0;
+
+		int left = 0;
+		int right = array.length-1;
+
+		while(left<right){
+			int mid = left+(right-left)/2;
+			if(array[mid]>array[right]){
+				left = mid+1;
+			}else if(array[mid] == array[right]){
+				right = right -1;
+			}else{
+				right = mid;
+			}
+		}
+		return array[left];
 	}
 	
 	public int minInOrder(int [] arrays, int index1, int index2){//顺序查找
